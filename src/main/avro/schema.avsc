@@ -1,0 +1,56 @@
+{
+  "type" : "record",
+  "name" : "Inventory",
+  "fields" : [ {
+    "name" : "inventoryList",
+    "type" : {
+      "type" : "record",
+      "name" : "InventoryList",
+      "fields" : [ {
+        "name" : "header",
+        "type" : {
+          "type" : "record",
+          "name" : "Header",
+          "fields" : [ {
+            "name" : "defaultInstock",
+            "type" : "boolean"
+          }, {
+            "name" : "listId",
+            "type" : "string"
+          }, {
+            "name" : "onOrder",
+            "type" : "boolean"
+          }, {
+            "name" : "useBundleInventoryOnly",
+            "type" : "boolean"
+          } ]
+        }
+      }, {
+        "name" : "records",
+        "type" : {
+          "type" : "array",
+          "items" : {
+            "type" : "record",
+            "name" : "Record",
+            "fields" : [ {
+              "name" : "allocation",
+              "type" : "int"
+            }, {
+              "name" : "allocationTimestamp",
+              "type" : "string"
+            }, {
+              "name" : "perpetual",
+              "type" : "boolean"
+            }, {
+              "name" : "preorderBackorderHandling",
+              "type" : "string"
+            }, {
+              "name" : "productId",
+              "type" : "int"
+            } ]
+          }
+        }
+      } ]
+    }
+  } ]
+}
